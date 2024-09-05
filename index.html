@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map with Dropdown List</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+        <div class="list-container">
+             
+            <!-- Disaster Form -->
+            <form id="disasterForm" action="addDisaster.php" method="post">
+                <label for="disasterType">Disaster Type:</label>
+                <select id="disasterType" name="disasterType" required>
+                    <option value="Earthquake">Earthquake</option>
+                    <option value="Tsunami">Tsunami</option>
+                    <option value="Flood">Flood</option>
+                </select>
+                
+                <label for="locationX">Location X:</label>
+                <input type="number" id="locationX" name="locationX" step="any" required>
+                
+                <label for="locationY">Location Y:</label>
+                <input type="number" id="locationY" name="locationY" step="any" required>
+                
+                <label for="dateOfOccurrence">Date of Occurrence:</label>
+                <input type="date" id="dateOfOccurrence" name="dateOfOccurrence" required>
+                
+                <label for="severityLevel">Severity Level:</label>
+                <select id="severityLevel" name="severityLevel" required>
+                    <option value="Low">Low</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="High">High</option>
+                </select>
+                
+                <label for="status">Status:</label>
+                <select id="status" name="status">
+                    <option value="Ongoing">Ongoing</option>
+                    <option value="Resolved">Resolved</option>
+                </select>
+                
+                <label for="authoritiesReached">Authorities Reached:</label>
+                <input type="checkbox" id="authoritiesReached" name="authoritiesReached">
+
+                <button type="submit">Add Disaster</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="mapLoad.js"></script>
+
+</body>
+</html>
